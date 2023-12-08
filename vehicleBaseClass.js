@@ -13,11 +13,11 @@ class Vehicle {
 
     start() {
         if (this.fuel > 0) {
-            return this.started = true;
             console.log("engine started...!!!");
+            return this.started = true;
         } else {
-            return this.started = false;
             console.log("engine cannot start...");
+            return this.started = false;
         }
     }
     accelerate() {
@@ -72,17 +72,22 @@ class Vehicle {
       
     }
 
-    typeOfVehicle(wheels) {
-        if (this.numberOfWheels == 8 && 8 == wheels) {
+    typeOfVehicle() {
+
+        console.log("This is a stupid function and should not be used. I fixed it sort of but it is still useless.")
+        if (this.numberOfWheels == 6 || this.numberOfWheels == 8) {
             console.log(this.model + " " + this.make + " is a Truck");
-        } else if (this.numberOfWheels == 4 && 4 == wheels) {
+            // it will always execute the following code block... It is a car after all.
+        } else if (this.numberOfWheels == 4) {
             console.log(this.model + " " + this.make + " is a Car");
-        } else if (this.numberOfWheels == 2 && 2 == wheels) {
+        } else if (this.numberOfWheels == 2) {
             console.log(this.model + " " + this.make + " is a Bike");
         } else {
             console.log("Unknown type of vehicle");
         }
     }
+
+ 
 }
 
 
