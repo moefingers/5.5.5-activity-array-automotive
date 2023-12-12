@@ -53,13 +53,12 @@ class Car extends Vehicle {
         console.log(
           `---Siphoning ${amountOut} gas from ${source.make} ${source.model}...`
         );
-        setTimeout(()=>{
+        setTimeout(() => {
           source.fuel -= amountOut;
-        this.fuel += amountOut;
-        console.log(`Sucessful. New fuel level: ${this.fuel}`);
-        console.log(`And enemy vehicle has ${source.fuel} remaining.`);
-        }, 800)
-        
+          this.fuel += amountOut;
+          console.log(`Sucessful. New fuel level: ${this.fuel}`);
+          console.log(`And enemy vehicle has ${source.fuel} remaining.`);
+        }, 800);
       } else {
         console.log(
           `You tried to siphon more than what was available.. Try a lower amount.`
@@ -87,8 +86,13 @@ console.log(MercurySedan);
 console.log(MercurySedan.numberOfWheels);
 
 futureWhip.siphonGas(MercurySedan, 4);
-futureWhip.siphonGas(MercurySedan, 4);
-futureWhip.siphonGas(MercurySedan, 2);
-
-MercurySedan.siphonGas(futureWhip, 4);
+setTimeout(() => {
+  futureWhip.siphonGas(MercurySedan, 4);
+}, 1600);
+setTimeout(() => {
+  futureWhip.siphonGas(MercurySedan, 2);
+}, 3200);
+setTimeout(() => {
+  MercurySedan.siphonGas(futureWhip, 4);
+}, 4800);
 //Create at least two new instances of the Car class and test them here:
