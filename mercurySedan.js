@@ -53,11 +53,13 @@ class Car extends Vehicle {
         console.log(
           `---Siphoning ${amountOut} gas from ${source.make} ${source.model}...`
         );
-
-        source.fuel -= amountOut;
+        setTimeout(()=>{
+          source.fuel -= amountOut;
         this.fuel += amountOut;
         console.log(`Sucessful. New fuel level: ${this.fuel}`);
         console.log(`And enemy vehicle has ${source.fuel} remaining.`);
+        }, 800)
+        
       } else {
         console.log(
           `You tried to siphon more than what was available.. Try a lower amount.`
